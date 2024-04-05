@@ -1,19 +1,22 @@
-public class Koshel {
+class Koshel {
     private String material;
     private String color;
     private int otsekov;
     private int money;
+    String currency;
 
     public static void main(String[] args) {
+        Koshel q= new Koshel("кожа","синий", 3, 150);
+        System.out.println(q);
            }
 
     @Override
     public String toString() {
         return "Кошелёк " +
-                "материал'" + material + '\'' +
-                ", цвет " + color + '\'' +
+                "материал" + material +
+                ", цвет " + color  +
                 ", кармашки " + otsekov +
-                ", деньги" + money +
+                ", деньги " + money +
                 ".";
     }
 
@@ -24,10 +27,14 @@ public class Koshel {
         this.money = money;
     }
 
+    public int getMoney() {
+        return money;
+    }
+
     public void setMoney(int money) {
         this.money = money;
         if (money<0)
-            money=0;
+            this.money=0;
     }
 
     public String getMaterial() {
